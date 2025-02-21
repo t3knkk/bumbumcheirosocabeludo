@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('fundo.png') center fixed;
+            background: url('/image/fundo.png') center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             color: rgb(0, 0, 0);
@@ -35,6 +35,24 @@
         }
         #playButton:hover {
             background-color: rgba(0, 0, 0, 0.9);
+        }
+        @media (max-width: 768px) {
+            #topo {
+                font-size: 10px;
+            }
+            #playButton {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            #topo {
+                font-size: 8px;
+            }
+            #playButton {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
         }
     </style>
 </head>
@@ -70,6 +88,18 @@
                 button.textContent = '⏸ Pause';
             }
             isPlaying = !isPlaying;
+        })
+        button.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                button.textContent = '▶ Play';
+            } else {
+                audio.play();
+                button.textContent = '⏸ Pause';
+            }
+            mensagem.style.display = 'block';
+            isPlaying = !isPlaying;
+            console.log("print ('Hello world') fail sintax error! line 69 sex.com")
         });
     </script>
 </body>
