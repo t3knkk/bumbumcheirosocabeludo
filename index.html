@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo de Volta GAy!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('/image/fundo.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        #topo {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #playButton {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #playButton:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div id="topo">Bem-vindo de volta, [Nome]!
+
+        Fala, irmão! Bom te ver de volta! O quartel não era o mesmo sem você. Sua presença faz a diferença, seja nas formações, nas missões ou na resenha do dia a dia.
+        
+        Espero que tenha sido uma boa jornada até aqui, e agora é hora de colocar o papo em dia, relembrar as histórias e criar novas.
+        
+        Tamo junto, sempre! 💪🔥
+        
+        Log do sistema:
+        
+        [2025-02-21 14:32:07] [INFO] Conexão estabelecida com o servidor central.
+        [2025-02-21 14:32:08] [WARNING] Pacote recebido com atraso de 132ms.
+        [2025-02-21 14:32:10] [ERROR] Tentativa de autenticação falhou. Código: 0x8F2D3.
+        [2025-02-21 14:32:12] [INFO] Reautenticação bem-sucedida. Usuário: [Nome].</div>
+    <button id="playButton">▶ Play</button>
+    <audio id="musica" src="indio.mp3"></audio>
+    
+    <script>
+        const audio = document.getElementById('musica');
+        const button = document.getElementById('playButton');
+        let isPlaying = false;
+        
+        button.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                button.textContent = '▶ Play';
+            } else {
+                audio.play();
+                button.textContent = '⏸ Pause';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
