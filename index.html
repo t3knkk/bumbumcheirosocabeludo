@@ -22,10 +22,9 @@
             font-size: 12px;
             font-weight: bold;
         }
-        #playButton {
+        #playButton, #editButton {
             position: absolute;
             top: 60px;
-            left: 10px;
             padding: 10px 15px;
             font-size: 16px;
             cursor: pointer;
@@ -34,14 +33,17 @@
             border: none;
             border-radius: 5px;
         }
-        #playButton:hover {
+        #playButton:hover, #editButton:hover {
             background-color: rgba(0, 0, 0, 0.9);
+        }
+        #editButton {
+            left: 110px;
         }
         @media (max-width: 768px) {
             #topo {
                 font-size: 10px;
             }
-            #playButton {
+            #playButton, #editButton {
                 font-size: 14px;
                 padding: 8px 12px;
             }
@@ -50,7 +52,7 @@
             #topo {
                 font-size: 8px;
             }
-            #playButton {
+            #playButton, #editButton {
                 font-size: 12px;
                 padding: 6px 10px;
             }
@@ -58,7 +60,7 @@
     </style>
 </head>
 <body>
-    <div id="topo">Bem-vindo de volta, [Nome]!
+    <div id="topo">Bem-vindo de volta, [Nome]! 
 
         Fala, irmão! Bom te ver de volta! O quartel não era o mesmo sem você. Sua presença faz a diferença, seja nas formações, nas missões ou na resenha do dia a dia.
         
@@ -72,7 +74,9 @@
         [2025-02-21 14:32:08] [WARNING] Pacote recebido com atraso de 132ms.
         [2025-02-21 14:32:10] [ERROR] Tentativa de autenticação falhou. Código: 0x8F2D3.
         [2025-02-21 14:32:12] [INFO] Reautenticação bem-sucedida. Usuário: [Nome].</div>
+    
     <button id="playButton">▶ Play</button>
+    <button id="editButton" onclick="window.location.href='edit.html'">Slideshow CANVA</button>
     <audio id="musica" src="indio.mp3"></audio>
     
     <script>
@@ -88,9 +92,7 @@
                 audio.play();
                 button.textContent = '⏸ Pause';
             }
-            mensagem.style.display = 'block';
             isPlaying = !isPlaying;
-            console.log("print ('Hello world') fail sintax error! line 69 sex.com")
         });
     </script>
 </body>
