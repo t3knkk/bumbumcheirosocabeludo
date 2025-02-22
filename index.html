@@ -22,9 +22,9 @@
             font-size: 12px;
             font-weight: bold;
         }
-        #playButton, #editButton {
+        #playButton, #editButton, #videoButton {
             position: absolute;
-            top: 60px;
+            top: 90px;
             padding: 10px 15px;
             font-size: 16px;
             cursor: pointer;
@@ -33,17 +33,20 @@
             border: none;
             border-radius: 5px;
         }
-        #playButton:hover, #editButton:hover {
+        #playButton:hover, #editButton:hover, #videoButton:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
         #editButton {
             left: 110px;
         }
+        #videoButton {
+            left: 300px;
+        }
         @media (max-width: 768px) {
             #topo {
                 font-size: 10px;
             }
-            #playButton, #editButton {
+            #playButton, #editButton, #videoButton {
                 font-size: 14px;
                 padding: 8px 12px;
             }
@@ -52,7 +55,7 @@
             #topo {
                 font-size: 8px;
             }
-            #playButton, #editButton {
+            #playButton, #editButton, #videoButton {
                 font-size: 12px;
                 padding: 6px 10px;
             }
@@ -77,6 +80,8 @@
     
     <button id="playButton">▶ Play</button>
     <button id="editButton" onclick="window.location.href='edit.html'">Slideshow CANVA</button>
+    <button id="videoButton" onclick="window.location.href='video.html'">Assistir Vídeo</button>
+
     <audio id="musica" src="indio.mp3"></audio>
     
     <script>

@@ -17,8 +17,23 @@
             width: 100%;
             height: auto;
         }
-        audio {
-            display: none;
+        #buttonContainer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #1db954;
+            color: white;
+        }
+        button:hover {
+            background-color: #17a447;
         }
     </style>
 </head>
@@ -27,9 +42,25 @@
         <source src="editfrifas.mp4" type="video/mp4">
         Seu navegador não suporta o formato de vídeo.
     </video>
-    <audio id="audio" autoplay loop>
+    
+    <audio id="audio" loop>
         <source src="audiokk.mp3" type="audio/mp3">
         Seu navegador não suporta áudio.
     </audio>
+    
+    <div id="buttonContainer">
+        <button id="playAudio">Ativar Áudio</button>
+        <button onclick="window.location.href='video.html'">Assistir Vídeo</button>
+    </div>
+
+    <script>
+        document.getElementById("playAudio").addEventListener("click", function() {
+            let audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+                this.style.display = "none"; // Oculta o botão após ativação
+            }
+        });
+    </script>
 </body>
 </html>
